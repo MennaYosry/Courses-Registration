@@ -1,0 +1,21 @@
+﻿table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:nth-of-type(odd) {
+    background: #ff6a00;
+}
+
+th {
+    background: #40ff90;
+    color: #000000;
+    font-weight: bold;
+}
+
+td, th {
+    padding: 6px;
+    border: 1px solid #eee;
+    text-align: center;
+    color:white;
+}

@@ -1,0 +1,34 @@
+﻿@model SchoolProject.Models.ViewModels.StudentCourseVM
+<a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index" style="color:chartreuse;">Back To Home</a>
+<link href="../wwwroot/css/CreateStyle.css"/>
+<link href="../wwwroot/css/site.css"/>
+<div class="container">
+    <form action="Register" method="post">
+        <div class="row">
+            <div class="col-25">
+                <label for="Teacher">Students</label>
+            </div>
+            <div class="col-75">
+                <select id="StudentId" name="StudentId">
+                    @foreach(Student student in Model.students){
+                    <option value="@student.StudentId">@student.StudentName</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="Teacher">Courses</label>
+            </div>
+            <div class="col-75">
+                <select id="CourseId" name="CourseId">
+                    @foreach(Course course in Model.courses){
+                    <option value="@course.CourseId">@course.CourseName</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <input type="submit" value="Register"/>
+    </form>
+</div>

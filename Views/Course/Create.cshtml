@@ -1,0 +1,38 @@
+﻿@model List<Teacher>
+@using (Html.BeginForm("Create", "Course", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <link rel="stylesheet" href="~/css/CreateStyle.css" />
+    <div class="row">
+        <div class="col-25">
+            <label>Name</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="CourseName" name="CourseName" placeholder="Course Name" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label> Capacity </label>
+        </div>
+        <div class="col-75">
+            <input type="number" id="CourseCapacity" name="CourseCapacity" placeholder="Course Capacity" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label> Select Teacher </label>
+        </div>
+        <div class="col-75">
+           <select id="teacher" name="TeacherId">
+               @foreach(Teacher teacher in Model )
+               {
+               <option value="@teacher.TeacherId">@teacher.TeacherName</option>
+               }               
+           </select>
+        </div>
+    </div>
+    <div class="row">
+        <input type="submit" value="submit" />
+    </div>
+}

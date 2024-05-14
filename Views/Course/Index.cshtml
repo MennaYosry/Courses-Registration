@@ -1,0 +1,20 @@
+﻿@model List<Course>
+<a class="nav-link text-light" asp-area="" asp-controller="Course" asp-action="Create" style="color:chartreuse;">AddNewCourse</a>
+<br />
+<link href="~/css/TableDesign.css" rel="stylesheet" />
+<table>
+    <tr>
+        <th>Course Name</th>
+        <th>Course Capacity</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (Course course in Model)
+    {
+        <tr>
+            <td>@course.CourseName</td>
+            <td>@course.CourseCapacity</td>
+            <td><a href="/Course/Delete/@course.CourseId">Delete @course.CourseName</a></td>
+        </tr>
+    }
+
+</table>

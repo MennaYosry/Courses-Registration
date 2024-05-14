@@ -1,0 +1,26 @@
+﻿@using (Html.BeginForm("Create", "Teacher", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <link rel="stylesheet" href="~/css/CreateStyle.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <div class="row">
+        <div class="col-25">
+            <label>Name</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="TeacherName" name="TeacherName" placeholder="Teacher Name" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label>Age</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="TeacherAge" name="TeacherAge" placeholder="Teacher Age" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <input type="submit" value="submit" />
+    </div>
+}
